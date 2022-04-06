@@ -1,3 +1,127 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500&family=Josefin+Slab:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Mulish:ital,wght@0,200;1,200&display=swap');
 
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css')
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.img-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    animation: zoom 25s;
+}
+
+@keyframes zoom {
+    0%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.banner{
+    position: absolute;
+    left: 15%;
+    top: 30%;
+}
+
+.banner h1{
+    color: aliceblue;
+    font-size: 3.5rem;
+    font-family: "Baloo Da 2", serif ;
+    font-weight: 100;
+    text-shadow: .2rem .5rem 7px rgba(0, 0, 0, 0.7);
+    line-height: 4rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: moveBanner 1.8s forwards;
+}
+
+.banner p{
+    font-family: "Josefin Slab", serif;
+    color: #fff;
+    font-size: 2rem;
+    text-shadow: .2rem .2rem rgba(0, 0, 0, 0.4);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: moveName 1.5s forwards;
+
+}
+
+.banner button{
+    font-family: "Mulish", serif;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    border-radius: 0.5rem;
+    background: #1D976C; 
+    background: -webkit-linear-gradient(to right, #54ff93, #39ffba); 
+    background: linear-gradient(to right, #2e7a4b, #00ffa6); 
+    padding: 1rem 3rem;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: moveButton 1s forwards;
+}
+
+.banner button:hover{
+    color: rgb(0, 255, 255);
+    transition: 1000ms;
+    border-radius: 75%;
+}
+
+@keyframes moveBanner{
+    0%{
+        transform: translateY(-10rem) translateX(-10rem) rotateY(-50deg);
+        color: #00ffa6;
+    }
+    100%{
+        transform: translateY(0) rotateY(0);
+        opacity: 1;
+        
+    }
+}
+
+@keyframes moveName{
+    0%{
+        transform: translateY(-5rem) translateX(-5rem) rotateY(-20deg);
+        color: #00ffa6;
+    }
+    100%{
+        transform: translateY(0) rotateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveButton{
+    0%{
+        transform: translateY(16rem) rotateY(-20deg);
+    }
+    100%{
+        transform: translateY(0) rotateY(0);
+        opacity: 1;
+    }
+}
+
+
